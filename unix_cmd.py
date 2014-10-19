@@ -37,4 +37,5 @@ def cmd_parser():
 
 if __name__ == '__main__':
     args = cmd_parser()
-    print(lib.format_args(args))
+    settings = lib.format_args(args)
+    lib.run_commands(settings)

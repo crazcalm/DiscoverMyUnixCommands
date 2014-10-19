@@ -16,6 +16,24 @@ def ls_dir(dirs):
     command = 'ls %s' % dirs
     subprocess.call([command], shell=True)
 
+def run_commands(settings):
+    """
+    Checks the settings and runs the needed commands
+    """
+    dirs = settings["dirs"]
+
+    if settings["grep"]:
+        if settings["grep_startswith"] != "":
+            grep = settings["grep_startswith"]
+        else:
+            grep = settings["grep_include"]
+
+        ls_dir_grep(dirs, grep)
+
+    else:
+      ls_dir(dirs)
+
+
 def format_args(args):
     """
     Formats the command line args program
@@ -30,7 +48,7 @@ def format_args(args):
     for key,value in args.iteritems():
         if key.startswith("s") and value != None:
             settings["grep"] = True
-            settings["grep_startswith"] = value[0]
+            settings["grep_startswith"] = "^" + value[0]
 
         elif key.startswith("i") and value !=None:
             settings["grep"] = True
@@ -51,7 +69,7 @@ def format_args(args):
 
 
 if __name__ == '__main__':
-    #ls_dir_grep("/usr/bin", "a")
-    #ls_dir("/usr/bin /usr/local/bin")
+    ls_dir_grep("/usr/bin", "^a")
+    ls_dir("/usr/bin /usr/local/bin")
     test = {"a":True, "d":False, "l":False, "s":None, "i":"hello"}
     format_args(test)
