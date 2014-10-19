@@ -48,7 +48,7 @@ def format_args(args):
     for key,value in args.iteritems():
         if key.startswith("s") and value != None:
             settings["grep"] = True
-            settings["grep_startswith"] = "^" + value[0]
+            settings["grep_startswith"] = "^" + value
 
         elif key.startswith("i") and value !=None:
             settings["grep"] = True
