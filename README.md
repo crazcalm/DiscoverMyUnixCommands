@@ -38,6 +38,15 @@ Usage:
 
             use: 'man [cmd]' or '[cmd] -h' to see how that cmd is used
 
+Warnings:
+---------
+
+      The very basic commands (like "ls", "rm", "cp", etc) are not in either of
+    the directories that I am searching through.
+
+      If you know which directory those commands are located in, feel free to add
+    it into the code or contacts me and I'll add it.
+
 
 Links to cool cmds:
 -------------------

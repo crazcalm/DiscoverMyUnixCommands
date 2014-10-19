@@ -8,7 +8,7 @@ def cmd_parser():
     """
 
     description = "A tool to help discover the terminal commands on your Unix Based Machine."
-    epilog = "use: 'man [cmd]' or '[cmd] -h' to see how that cmd is used"
+    epilog = "use: 'man [cmd]' ,'[cmd] -h', or '[cmd] --help' to see how that cmd is used"
 
     # Initilize the arg parser
     parser = argparse.ArgumentParser(description=description, epilog=epilog)
