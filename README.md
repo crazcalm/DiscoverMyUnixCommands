@@ -36,7 +36,7 @@ Usage:
               -i, --includes I, __INCLUDES
                                     applies a grep 'string' filter to the output
 
-            use: 'man [cmd]' or '[cmd] -h' to see how that cmd is used
+            use: 'man [cmd]' or '[cmd] -h' or '[cmd] --help' to see how that cmd is used
 
 Warnings:
 ---------
