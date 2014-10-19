@@ -37,3 +37,15 @@ Usage:
                                     applies a grep 'string' filter to the output
 
             use: 'man [cmd]' or '[cmd] -h' to see how that cmd is used
+
+
+Links to cool cmds:
+-------------------
+
+    http://kkovacs.eu/cool-but-obscure-unix-tools
+
+    https://github.com/Homebrew/homebrew-games
+
+    http://www.makeuseof.com/tag/these-6-awesome-terminal-commands-will-boost-your-macbook/
+
+    http://www.tecmint.com/20-funny-commands-of-linux-or-linux-is-fun-in-terminal/
