@@ -45,23 +45,43 @@ def format_args(args):
         "grep_startswith":"",
     }
 
-    for key,value in args.iteritems():
-        if key.startswith("s") and value != None:
-            settings["grep"] = True
-            settings["grep_startswith"] = "^" + value
+    try: #python 2
+        for key,value in args.iteritems():
+            if key.startswith("s") and value != None:
+                settings["grep"] = True
+                settings["grep_startswith"] = "^" + value
 
-        elif key.startswith("i") and value !=None:
-            settings["grep"] = True
-            settings["grep_include"] = value
+            elif key.startswith("i") and value !=None:
+                settings["grep"] = True
+                settings["grep_include"] = value
 
-        if key.startswith("d") and value:
-            settings["dirs"] = "/usr/bin"
+            if key.startswith("d") and value:
+                settings["dirs"] = "/usr/bin"
 
-        elif key.startswith("l") and value:
-            settings["dirs"] = "/usr/local/bin"
+            elif key.startswith("l") and value:
+                settings["dirs"] = "/usr/local/bin"
 
-        elif key.startswith("a") and value:
-            settings["dirs"] = "/usr/bin /usr/local/bin"
+            elif key.startswith("a") and value:
+                settings["dirs"] = "/usr/bin /usr/local/bin"
+
+    except AttributeError: #python 3.4
+        for key,value in args.items():
+            if key.startswith("s") and value != None:
+                settings["grep"] = True
+                settings["grep_startswith"] = "^" + value
+
+            elif key.startswith("i") and value !=None:
+                settings["grep"] = True
+                settings["grep_include"] = value
+
+            if key.startswith("d") and value:
+                settings["dirs"] = "/usr/bin"
+
+            elif key.startswith("l") and value:
+                settings["dirs"] = "/usr/local/bin"
+
+            elif key.startswith("a") and value:
+                settings["dirs"] = "/usr/bin /usr/local/bin"
 
     return settings
 

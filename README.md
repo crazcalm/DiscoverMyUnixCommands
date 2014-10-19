@@ -12,10 +12,6 @@ Back Story:
       I am writing this tool in hope that I can use it to become more familiar
     with these commands.
 
-Description:
-------------
-    A tool to help discover the terminal commands on your Unix Based Machine.
-
 Install:
 --------
     git clone git@github.com:crazcalm/DiscoverMyUnixCommands.git
