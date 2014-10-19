@@ -1,5 +1,6 @@
 from __future__ import print_function
 import argparse
+import lib
 
 def cmd_parser():
     """
@@ -31,8 +32,9 @@ def cmd_parser():
           help="applies a grep 'string' filter to the output",
           type=str)
 
-    args = parser.parse_args()
-    print(args)
+    args = vars(parser.parse_args())
+    return args
 
 if __name__ == '__main__':
-  cmd_parser()
+    args = cmd_parser()
+    print(lib.format_args(args))
